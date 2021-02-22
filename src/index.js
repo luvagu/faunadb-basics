@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const express = require('express')
 
 const app = express()
 
 const faunadb = require('faunadb')
-const client = new faunadb.Client({ secret: FAUNA_KEY })
+const client = new faunadb.Client({ secret: process.env.FAUNA_KEY })
 
 const { 
     Paginate,
